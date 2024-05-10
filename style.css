@@ -47,7 +47,7 @@ a:hover {
   left: 27%; /* This places the divider in the middle */
   top: 30px;
   bottom: 0px;
-  width: 2px; /* Thickness of the line */
+  width: 1px; /* Thickness of the line */
   background-color: #000; /* Color of the line */
   transform: translateX(-50%); /* Ensures the line is exactly centered */
 }
