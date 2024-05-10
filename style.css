@@ -373,10 +373,6 @@ img, video, canvas, iframe {
       margin-left: 10px; 
   }
 
-  .rightScreenContainer {
-    margin-left: 5px;  /* Adds left margin to rightScreenContainer */
-}
-
   .rightScreenContent h2 {
     margin-top: 0;  /* Adjust as necessary based on testing */
   }

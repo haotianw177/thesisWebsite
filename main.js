@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     } else {
       // Mobile-specific adjustments
-      dropdownMenu.style.display = 'none'; // Keep the dropdown hidden until toggled on mobile
+      dropdownMenu.style.display = 'block'; // Keep the dropdown hidden until toggled on mobile
       textItems.forEach(item => item.style.display = 'none'); // Hide all right screen content on mobile initially
       
     }
