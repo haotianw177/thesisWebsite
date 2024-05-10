@@ -8,6 +8,8 @@ const textContainer = document.querySelector('.rightScreenContainer');
 const textItems = textContainer.querySelectorAll('.rightScreenContent');
 const toggleButtons = document.querySelectorAll('.categoriesMenuButton');
 const toggleButton = document.getElementById('toggleButton');
+const homeButton = document.querySelector('.homeButton');
+
 const dropdownMenu = document.getElementById('dropdownMenu');
 
 let currentActiveText = 0;
@@ -73,9 +75,19 @@ for (let i = 0; i < toggleButtons.length; i++) {
   });
 }
 
+homeButton.style.display = 'none';
+
+
 toggleButton.addEventListener('click', () => {
   let isMenuOpen = dropdownMenu.style.display === 'block' || dropdownMenu.style.display === '';
   dropdownMenu.style.display = isMenuOpen ? 'none' : 'block';
+  homeButton.style.display = isMenuOpen ? 'none' : 'block';
+
+  homeButton.addEventListener('click', () => {
+    dropdownMenu.style.display = 'none';
+    homeButton.style.display = 'none';
+    // Reset to main content or perform other cleanup tasks
+  });
 
   if (isMenuOpen) {
       document.querySelectorAll('.leftContainer .headerInfo, .leftContainer .footerInfo').forEach(elem => {
@@ -132,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Ensure correct display on resize
   window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
+      homeButton.style.display = 'none'; 
       // Desktop-specific adjustments
       dropdownMenu.style.display = 'block'; // Ensure the dropdown is always visible on desktop
       document.querySelectorAll('.leftContainer .headerInfo, .leftContainer .footerInfo').forEach(elem => {
@@ -146,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Mobile-specific adjustments
       dropdownMenu.style.display = 'none'; // Keep the dropdown hidden until toggled on mobile
       textItems.forEach(item => item.style.display = 'none'); // Hide all right screen content on mobile initially
+      
     }
   });
   

@@ -344,8 +344,22 @@ img, video, canvas, iframe {
   display: block; /* Ensure it displays as block to enable margins */
 }
 
+.homeButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  top: 10px; /* Top left corner */
+  left: 0; /* Top left corner */
+  margin-left: 10px; /* Slight margin from the corner */
+  z-index: 1002; /* Higher than other elements to be on top */
+}
+
+
 
 @media screen and (max-width: 768px) {
+  .homeButton {
+    display: block; /* Only show on mobile when toggled */
+  }
+
   .categoriesMenuButton {
     display: block;  
   }
