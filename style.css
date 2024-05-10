@@ -1,0 +1,444 @@
+* {
+  font-family: 'Authentic', sans-serif;  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="32" height="32"><circle cx="8" cy="8" r="7" fill="black"/></svg>') 6 6, auto;
+}
+
+@font-face {
+  font-family: 'Authentic';
+  src: url('fonts/1.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: white !important;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;  
+  padding: 0;  
+  width: 100%; 
+  height: 100%; 
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  /* font-style: italic; */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.mainContainer {
+  display: flex;
+  position: relative; /* Make sure this is relatively positioned if it's not already */
+  height: calc(100% - 40px); /* Adjust height as necessary, subtracting 40px for the 20px top and bottom spaces */
+  padding-top: 20px; /* Add 20px space on the top */
+  padding-bottom: 20px; /* Add 20px space on the bottom */
+}
+
+.mainContainer::after {
+  content: "";
+  position: absolute;
+  left: 27%; /* This places the divider in the middle */
+  top: 30px;
+  bottom: 0px;
+  width: 2px; /* Thickness of the line */
+  background-color: #000; /* Color of the line */
+  transform: translateX(-50%); /* Ensures the line is exactly centered */
+}
+
+
+#fitScreenImage {
+  max-width: 58%;  /* Scale down the image to 80% of the container width */
+  height: auto;  /* Maintain aspect ratio */
+  display: block;  /* Ensures the image block behaves properly */
+  margin: 10px auto auto auto;  /* Centers the image horizontally within the container */
+}
+
+.leftContainer {
+  background-color: transparent; 
+  z-index: 1010;
+  position: relative;  /* This is correct as it keeps the container in the normal document flow */
+  top: 0;
+  left: 20px;  /* All children will inherit this starting position */
+  width: 30%;
+  overflow-y: auto;  /* Allows scrolling within the container */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Ensures all children align to the left edge */
+  padding: 0px 0;  /* Maintains padding for all children */
+  box-sizing: border-box;  /* Includes padding in width calculation */
+  margin-top: 20px;
+}
+
+
+
+/* hide left scroll bar, if it works don't touch it */
+body::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.headerInfo{
+  margin-bottom: 20px;
+  background-color: transparent; 
+  width: 85%;  /* Standardizes width for alignment */
+  padding: 0px;  /* Ensures padding inside each element */
+  /* border-radius: 20px; */
+  margin: 0px 0;  /* Standardizes and adds vertical spacing */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Ensures content aligns to the left */
+  text-align: left;
+  margin-bottom:20px;
+}
+
+.categoriesMenuButton {
+  border: none; 
+  width: 300px;  /* Use the full width of the parent container */
+  display: block;  /* Block display to fill the width */
+  padding: 0px 0px;  /* Padding to space the text inside the button */
+  background-color: transparent;  /* Background remains transparent */
+  text-align: left;  /* Align text to the left */
+  box-sizing: border-box;  /* Include padding in width calculation */
+  
+}
+
+.categoriesMenuButton:hover {
+  background-color: blue;  /* Background color on hover */
+}
+
+/* Targets the first hr inside a parent if it is the very first child */
+.dropdown-menu > div:first-child > hr:first-child {
+  margin-top: 1px;  /* Adjust as needed */
+  margin-bottom: 1px;
+}
+
+/* Existing styles for adjacent hr and button */
+.categoriesMenuButton + hr,
+hr + .categoriesMenuButton {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: #000;
+}
+
+/* Optionally target the last hr if necessary */
+.dropdown-menu > div:last-child > hr:last-child {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+
+
+.info {
+  margin-top: 20px;  /* Adds a bit more space after the last menu button */
+}
+
+.footerInfo {
+  background-color: transparent;
+  width: 85%;
+  /* padding: 5px; */
+  margin: 10px 0;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  margin-top:20px;
+}
+
+.footerLink {
+  color: black;
+  text-decoration: none;
+  font-size: 1em; /* Adjust size as needed */
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+.rightScreenContent {
+  margin-top: 20px;
+  display: none;
+  position: fixed;
+  left: 30%;
+  top: 0%;
+  bottom: 0;
+  width: 70%;
+  overflow-y: scroll;
+}
+
+hr{
+  color: black;
+}
+
+.contact hr + h4 {
+  margin-top: 1px; /* Decrease this value to reduce space above h2 */
+}
+
+/* Reduce margin for hr immediately following h2 */
+.contact h4 + hr {
+  margin-top: 1px; /* Decrease this value to reduce space below h2 */
+}
+
+/* Optionally, adjust the bottom margin of hr to control space below */
+.contact hr {
+  width: 95%;
+  border: none; /* Removes default border */
+  background-color: black; /* Sets the color of the line */
+  margin: 0; /* Removes default margin to allow line to stretch fully */
+  margin-top: 0px;  /* Space above the first hr and below the second hr */
+  margin-bottom: 1px;
+}
+
+.rightScreenContent hr {
+
+}
+
+.rightScreenContent .contact {
+  margin-top: 1px;  /* Removes top margin from contact div */
+  margin-bottom: 1px;  /* Removes bottom margin from contact div */
+  padding: 1px 0; /* Optional: Adds padding inside the contact div for internal spacing */
+}
+
+.rightScreenContent h2 {
+  /* Apply additional top margin if needed to align perfectly with the p element */
+  margin-top: 0;  /* Adjust this to ensure alignment */
+}
+
+/* .rightScreenContent img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+} */
+
+.imageContainer {
+  margin-left: 0;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.imageContainer img {
+  width: 95%;  /* Keeps width controlled by the container or image size */
+  height: auto;  /* Maintains the aspect ratio */
+  margin-right: 30px;
+  margin-bottom: 30px;  /* Adds margin only at the bottom of each image */
+  display: block;  /* Ensures the image block behaves properly */
+}
+
+.imageContainer img:last-child {
+  margin-bottom: 30px;  /* Removes bottom margin from the last image to maintain container padding */
+}
+
+.contact {
+  text-align: left;
+  padding-left: same as h3 padding; /* Adjust this value based on your layout */
+  margin-bottom: 40px;
+}
+
+.contact h4 {
+  margin: 10px 0; /* Example margin, adjust based on design needs */
+  color: black; /* Or any color that fits your design */
+}
+
+.contact a {
+  color: blue; /* Color for links */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.contact a:hover {
+  text-decoration: underline; /* Adds underline on hover for better UX */
+}
+
+.active {
+  display: block;
+}
+
+
+/* h1 for title of the site */
+h1 {
+  font-size: 1em;
+  color: black;
+}
+
+/* h2 is for project  title */
+h2 {
+  text-align: left;
+  /* margin: 5%; */
+  font-size: 3em;
+  color: black;
+  text-shadow: #00f000;
+}
+
+/* h3 is for project description */
+h3 {
+  text-align: left;
+  /* margin: 5%; */
+  font-size: 1.2em;
+  color: black;
+  max-width: 80%;
+}
+
+/* h4 is for contact */
+h4 {
+  text-align: left;
+  margin: 5%;
+  font-size: 1.5em;
+  color: blue;
+}
+
+h5{}
+
+/* h6 is for student names */
+h6 {
+  text-align: left;
+  font-size: 1.2em;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* p is for footer info */
+p {
+  text-align: left;
+  font-size: 1em;
+  color: black;
+  margin: 20px;
+  padding: 0;
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* #imagePreviewModal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+} */
+
+
+#imagePreviewModal img {
+  max-width: 90%; /* Responsive width, maximum of 80% of the screen width */
+  max-height: 90%; /* Maximum of 80% of the screen height */
+  display: block; /* Ensure it displays as block to enable margins */
+}
+
+
+@media screen and (max-width: 768px) {
+  .categoriesMenuButton {
+    display: block;  
+  }
+
+  .leftContainer {
+      width: 100%;
+      position: static;
+      height: auto;
+      overflow-y: visible;
+      display: block;
+  }
+
+  .rightScreenContent h2 {
+    margin-top: 0;  /* Adjust as necessary based on testing */
+  }
+
+  .rightScreenContent {
+      position: static;
+      width: 100%;
+      display: none;
+      border: none;
+  }
+
+  .active {
+      display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .leftContainer {
+      margin-left: 5px;  /* Adds left margin to leftContainer */
+       /* Keeps your existing top padding */
+  }
+
+  .rightScreenContainer {
+      margin-left: 5px;  /* Adds left margin to rightScreenContainer */
+  }
+}
+
+
+/* Hide toggle button on larger screens */
+/* Hide toggle button on larger screens */
+@media screen and (min-width: 769px) {
+  #toggleButton {
+      display: none; /* Ensure toggle button is hidden in laptop view */
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+
+  /* Position toggle button on top right for mobile view */
+  #toggleButton {
+      display: block;  /* Make toggle button visible */
+      position: fixed;  /* Fix position to viewport */
+      top: 0;  /* Align to the top */
+      right: 0;  /* Align to the right */
+      width: 50px;  /* Set width for button */
+      height: 50px;  /* Set height for button */
+      text-align: center;  /* Center icon within button */
+      background: none;  /* No background color */
+      z-index: 1001;  /* Ensure it's on top but below header */
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .leftContainer .headerInfo, .leftContainer .footerInfo {
+    display: block; /* Ensure these are visible */
+  }
+
+  .rightScreenContent {
+    display: none; /* Initially hide all right screen content */
+  }
+
+  #fitScreenImage {
+    display: block; /* Ensure the initial image is displayed */
+    width: 100%; /* Adjust width to fit the screen */
+    margin-top: 10px; /* Add some top margin for spacing */
+  }
+
+  #toggleButton {
+    display: block;  /* Ensure toggle button is visible */
+  }
+
+  .mainContainer::after {
+    display: none;
+  }
+}
+
