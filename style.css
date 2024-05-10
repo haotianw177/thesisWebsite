@@ -15,7 +15,7 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: white !important;
+  background-color: #FBF9F5;
   -webkit-font-smoothing: antialiased;
   margin: 0;  
   padding: 0;  
@@ -37,7 +37,6 @@ a:hover {
   display: flex;
   position: relative; /* Make sure this is relatively positioned if it's not already */
   height: calc(100% - 40px); /* Adjust height as necessary, subtracting 40px for the 20px top and bottom spaces */
-  padding-top: 20px; /* Add 20px space on the top */
   padding-bottom: 20px; /* Add 20px space on the bottom */
 }
 
@@ -76,7 +75,9 @@ a:hover {
   margin-top: 20px;
 }
 
-
+.leftLower{
+  margin-top: 38px;
+}
 
 /* hide left scroll bar, if it works don't touch it */
 body::-webkit-scrollbar {
@@ -97,6 +98,7 @@ body::-webkit-scrollbar {
   justify-content: flex-start;  /* Ensures content aligns to the left */
   text-align: left;
   margin-bottom:20px;
+
 }
 
 .categoriesMenuButton {
@@ -107,7 +109,6 @@ body::-webkit-scrollbar {
   background-color: transparent;  /* Background remains transparent */
   text-align: left;  /* Align text to the left */
   box-sizing: border-box;  /* Include padding in width calculation */
-  
 }
 
 .categoriesMenuButton:hover {
@@ -133,6 +134,7 @@ hr + .categoriesMenuButton {
   margin-top: 1px;
   margin-bottom: 1px;
 }
+
 
 
 
@@ -175,44 +177,6 @@ hr + .categoriesMenuButton {
   overflow-y: scroll;
 }
 
-hr{
-  color: black;
-}
-
-.contact hr + h4 {
-  margin-top: 1px; /* Decrease this value to reduce space above h2 */
-}
-
-/* Reduce margin for hr immediately following h2 */
-.contact h4 + hr {
-  margin-top: 1px; /* Decrease this value to reduce space below h2 */
-}
-
-/* Optionally, adjust the bottom margin of hr to control space below */
-.contact hr {
-  width: 95%;
-  border: none; /* Removes default border */
-  background-color: black; /* Sets the color of the line */
-  margin: 0; /* Removes default margin to allow line to stretch fully */
-  margin-top: 0px;  /* Space above the first hr and below the second hr */
-  margin-bottom: 1px;
-}
-
-.rightScreenContent hr {
-
-}
-
-.rightScreenContent .contact {
-  margin-top: 1px;  /* Removes top margin from contact div */
-  margin-bottom: 1px;  /* Removes bottom margin from contact div */
-  padding: 1px 0; /* Optional: Adds padding inside the contact div for internal spacing */
-}
-
-.rightScreenContent h2 {
-  /* Apply additional top margin if needed to align perfectly with the p element */
-  margin-top: 0;  /* Adjust this to ensure alignment */
-}
-
 /* .rightScreenContent img {
   max-width: 100%;
   max-height: 100%;
@@ -242,24 +206,55 @@ hr{
 }
 
 .contact {
+  margin-top: 0px; /* Reduces space above the contact div */
+  margin-bottom: 0px; /* Reduces space below the contact div */
   text-align: left;
   padding-left: same as h3 padding; /* Adjust this value based on your layout */
   margin-bottom: 40px;
 }
 
 .contact h4 {
-  margin: 10px 0; /* Example margin, adjust based on design needs */
-  color: black; /* Or any color that fits your design */
+  margin-top: 0px; /* Reduces space above the h4 within the contact div */
+  margin-bottom: 0px; /* Reduces space below the h4 within the contact div */
+  margin: 0px 0; /* Example margin, adjust based on design needs */
+  color: black;
+}
+
+/* Optionally, adjust the bottom margin of hr to control space below */
+.contact hr {
+  height: 1px; 
+  width: 95%;
+  border: none; /* Removes default border */
+  background-color: black; /* Sets the color of the line */
+  margin: 0; /* Removes default margin to allow line to stretch fully */
+  margin-top: 0px;  /* Space above the first hr and below the second hr */
+  margin-bottom: 1px;
 }
 
 .contact a {
-  color: blue; /* Color for links */
+  color: black; /* Color for links */
   text-decoration: none; /* Removes underline from links */
 }
 
 .contact a:hover {
   text-decoration: underline; /* Adds underline on hover for better UX */
 }
+
+hr{
+  color: black;
+}
+
+
+.projectHeaderInfo h2 {
+  margin-bottom: 5px; /* Reduce space below h2 */
+}
+
+.projectHeaderInfo hr {
+  margin: 0;
+  width: 95%;
+  background-color: black;
+}
+
 
 .active {
   display: block;
