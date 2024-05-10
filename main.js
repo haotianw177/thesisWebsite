@@ -46,10 +46,13 @@ toggleButton.addEventListener('click', () => {
 
 function displayButtonsAccordingToViewport() {
   if (window.innerWidth <= 768) {
-      // Ensures that the dropdown menu is shown on mobile on load
-      dropdownMenu.style.display = 'block'; // Change to 'block' to show on mobile
+    // Ensures that the dropdown menu is shown on mobile on load
+    dropdownMenu.style.display = 'block'; // Change to 'block' to show on mobile
+    // Hide the homeButton if no content is active
+    homeButton.style.display = currentActiveText === 0 ? 'none' : 'block';
   } else {
-      dropdownMenu.style.display = 'block'; // Ensures it's always shown on larger screens
+    dropdownMenu.style.display = 'block'; // Ensures it's always shown on larger screens
+    homeButton.style.display = 'none'; // Hide on desktop view by default
   }
 }
 
@@ -149,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
       dropdownMenu.style.display = 'block'; // Ensure the dropdown is always visible on desktop
       document.querySelectorAll('.leftContainer .headerInfo, .leftContainer .footerInfo').forEach(elem => {
         elem.style.display = 'block'; // Ensure all leftContainer elements are visible on desktop
-      });
+      });x``
   
       // Ensure that the appropriate rightScreenContent is displayed
       if (!textItems[currentActiveText] || textItems[currentActiveText].style.display === 'none') {
@@ -168,6 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
     textItems.forEach((item, idx) => {
       item.style.display = 'none'; // Hide all first
     });
+
+    homeButton.style.display = 'block'; // Add this line
+
+    // Hide dropdown if in phone mode after selecting an item
+    if (window.innerWidth <= 768) { 
+        dropdownMenu.style.display = 'none';
+    }
+    
     if (textItems[index]) {
       textItems[index].style.display = 'block'; // Show only the active item
     }
