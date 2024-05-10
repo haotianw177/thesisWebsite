@@ -356,7 +356,12 @@ img, video, canvas, iframe {
       height: auto;
       overflow-y: visible;
       display: block;
+      margin-left: 10px; 
   }
+
+  .rightScreenContainer {
+    margin-left: 5px;  /* Adds left margin to rightScreenContainer */
+}
 
   .rightScreenContent h2 {
     margin-top: 0;  /* Adjust as necessary based on testing */
@@ -372,19 +377,26 @@ img, video, canvas, iframe {
   .active {
       display: block;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .leftContainer {
-      margin-left: 5px;  /* Adds left margin to leftContainer */
-       /* Keeps your existing top padding */
+    /* Position toggle button on top right for mobile view */
+    #toggleButton {
+      display: block;  /* Make toggle button visible */
+      position: fixed;  /* Fix position to viewport */
+      top: 16px;  /* Align to the top */
+      right: 0;  /* Align to the right */
+      width: 50px;  /* Set width for button */
+      height: 50px;  /* Set height for button */
+      text-align: center;  /* Center icon within button */
+      background: none;  /* No background color */
+      z-index: 1001;  /* Ensure it's on top but below header */
   }
 
-  .rightScreenContainer {
-      margin-left: 5px;  /* Adds left margin to rightScreenContainer */
+  hr{
+    margin: 0;
+    width: 95%;
   }
+  
 }
-
 
 /* Hide toggle button on larger screens */
 /* Hide toggle button on larger screens */
@@ -396,21 +408,6 @@ img, video, canvas, iframe {
 
 /* Responsive adjustments for mobile screens */
 @media screen and (max-width: 768px) {
-
-  /* Position toggle button on top right for mobile view */
-  #toggleButton {
-      display: block;  /* Make toggle button visible */
-      position: fixed;  /* Fix position to viewport */
-      top: 0;  /* Align to the top */
-      right: 0;  /* Align to the right */
-      width: 50px;  /* Set width for button */
-      height: 50px;  /* Set height for button */
-      text-align: center;  /* Center icon within button */
-      background: none;  /* No background color */
-      z-index: 1001;  /* Ensure it's on top but below header */
-  }
-
-
 }
 
 @media screen and (max-width: 768px) {
